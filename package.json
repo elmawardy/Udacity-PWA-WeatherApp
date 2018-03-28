@@ -9,6 +9,7 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "sw-precache": "^5.2.1"
+    "sw-precache": "^5.2.1",
+    "workbox-sw": "^3.0.1"
   }
 }
