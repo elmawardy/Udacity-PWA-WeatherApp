@@ -3,7 +3,7 @@ importScripts('/node_modules/workbox-sw/build/workbox-sw.js')
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "f379fa3a2b5d1fc44c419af4b8c4ea97"
+    "revision": "02e834217ab6222d7e26d922712e65ed"
   },
   {
     "url": "styles/ud811.css",
