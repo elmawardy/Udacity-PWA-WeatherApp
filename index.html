@@ -172,6 +172,18 @@
         label:label
       });
     }
+    
+    //checks for internet connectivity & makes header gray if there's no connection
+    // to give the offline feeling
+    $(document).ready(function () {
+      setInterval(async function checkConnection(){
+        await fetch('./README.md').then(()=>{
+          $('.header').css('background-color','#3F51B5')
+        }).catch((err)=>{
+          $('.header').css('background-color','#808080')
+        })
+      },1000)
+    })
   
   </script>
 

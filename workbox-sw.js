@@ -1,6 +1,6 @@
 importScripts('/node_modules/workbox-sw/build/workbox-sw.js')
 // Force production builds
-workbox.setConfig({ debug: false });
+// workbox.setConfig({ debug: false });
 
 
 workbox.core.setCacheNameDetails({
@@ -12,7 +12,7 @@ workbox.core.setCacheNameDetails({
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "be91561b75cae64d739d98b8dcf10cfb"
+    "revision": "8ef7f31e317b64d854233a04c3a9b9f5"
   },
   {
     "url": "styles/ud811.css",
@@ -39,7 +39,8 @@ workbox.routing.registerRoute(
       if (url.href.startsWith("https://publicdata-weather.firebaseio.com/")) return true;
       return false;
     },
-    workbox.strategies.networkFirst({
+  
+  workbox.strategies.networkFirst({
           // Use a custom cache for this route
           cacheName: 'json-response',
           // Add an array of custom plugins (like workbox.expiration.Plugin)
@@ -55,6 +56,11 @@ workbox.routing.registerRoute(
       return fetch('./images/clear.png')
     }
   )
+
+  workbox.routing.registerRoute(
+    'https://code.jquery.com/jquery-3.3.1.min.js',
+    workbox.strategies.staleWhileRevalidate()
+  );
 
 
 // // One thing to note is that if you return a value in the match callback, it’ll be passed into the handler callback as a params argument.
