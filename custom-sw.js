@@ -16,3 +16,8 @@ workbox.routing.registerRoute(
     },
     workbox.strategies.networkFirst()
   );
+
+  workbox.routing.registerRoute(
+    'https://code.jquery.com/jquery-3.3.1.min.js',
+    workbox.strategies.staleWhileRevalidate()
+  );

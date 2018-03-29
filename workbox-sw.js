@@ -3,7 +3,7 @@ importScripts('/node_modules/workbox-sw/build/workbox-sw.js')
 workbox.precaching.precacheAndRoute([
   {
     "url": "index.html",
-    "revision": "be91561b75cae64d739d98b8dcf10cfb"
+    "revision": "f379fa3a2b5d1fc44c419af4b8c4ea97"
   },
   {
     "url": "styles/ud811.css",
@@ -32,4 +32,9 @@ workbox.routing.registerRoute(
       return false;
     },
     workbox.strategies.networkFirst()
+  );
+
+  workbox.routing.registerRoute(
+    'https://code.jquery.com/jquery-3.3.1.min.js',
+    workbox.strategies.staleWhileRevalidate()
   );

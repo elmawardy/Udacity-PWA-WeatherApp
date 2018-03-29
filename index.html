@@ -172,6 +172,14 @@
         label:label
       });
     }
+    
+    //checks for internet connectivity & makes header gray if there's no connection
+    // to give the offline feeling
+    $(document).ready(function () {
+      fetch('./README.md').catch((err)=>{
+        $('.header').css('background-color','#808080')
+      })
+    })
   
   </script>
 
